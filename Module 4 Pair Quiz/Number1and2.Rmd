@@ -1,0 +1,23 @@
+---
+title: "Number1and2"
+author: "Joey Castillo"
+date: "7/28/2021"
+output: html_document
+library: (help = 'datasets')
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+plot(BP,Noise, main= 'Regression for BP and Noise'
+xlab = 'BP', ylab = 'Noise)
+
+)
+
+
+
+
+
