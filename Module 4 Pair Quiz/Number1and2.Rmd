@@ -96,27 +96,52 @@ $$
 We would now use these values to compute for β1 using this formula: 
 
 $$
-\hat {\beta_1} = \frac{S_{xy}}{S_{xx}} = \frac{533.2}{3059.2} = 0.1742939
+\hat {\beta_1} = \frac{S_{xy}}{S_{xx}} = \frac{533.2}{3059.2} = 0.1742939 \approx 0.1743
 $$
 
 We would then use the value for β1 along with other values/variables to compute for β0 in this formula:
 
 $$
-\hat {\beta_0} = \bar y - \hat {\beta_1}\bar x = 4.3 - (0.1742939)(82.8) = -10.1315349
+\hat {\beta_0} = \bar y - \hat {\beta_1}\bar x = 4.3 - (0.1742939)(82.8) = -10.1315349 \approx -10.132
 $$
 
 **Let us now substitute these values to solve for the linear regression model:**
 
 $$
-\hat {y} = -10.1315349 + 0.1742939x
+\hat {y} = -10.132 + 0.1743x
 $$
 
 To compute for the estimate of σ2, we would use this formula: 
 
+$$
+\sigma^2 = \frac{SSE}{n-2}
+$$
+
+However, to solve for SSE, we would use this formula:
+
+$$
+SSE = \sum_{i=1}^{20} {(y - \hat {y_1})^2} = 31.26648
+$$
+
+We now substitute the values:
+
+$$
+\sigma^2 = \frac {31.26648}{18} = 1.737027 \approx 1.737
+$$
+
+The  estimate of σ2 or estimated variance is **1.737** 
+
 ### C. Find the predicted mean rise in blood pressure level associated with a sound pressure level of 85 decibels.
 
+To compute for the mean rise, we just need to substitute the x value from the linear regression model. Since the value of 85 has a unit of decibels, it would mean that the value is in the x-axis of the scatter plot or graph, thus We would let x be 85 to compute for the predicted mean rise. The blood pressure level mean rise would be:
 
-##Question 2
+$$
+\hat {y} = -10.132 + 0.1743(85) = -10.132 + 14.8155 = 4.6835 
+$$
+
+The predicted mean rise in blood pressure level is **4.6835**
+
+## Question 2
 
 ### An article in Optical Engineering ["Operating Curve Extraction of a Correlator's Filter" (2004, Vol. 43, pp. 2775-2779)] reported on the use of an optical correlator to perform an experiment by varying brightness and contrast. The resulting modulation is characterized by the useful range of gray levels. The data follow:
 
