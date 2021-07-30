@@ -20,24 +20,27 @@ BP <- c(1, 0, 1, 2, 5, 1, 4, 6, 2, 3, 5, 4, 6, 8, 4, 5, 7, 9, 7, 6)
 
 
 
-
-
-```{r}
-plot(Noise, BP, pch = 16, cex = 1.3, col = "blue", main = "BLOOD PRESSURE RISE PLOTTED AGAINST NOISE LEVELS", xlab = "NOISE LEVELS (db)", ylab = "BLOOD PRESSURE")
-```
-
-
-
-
 ## Question 1 
 
 ### An article in the Journal of Sound and Vibration ["Measurement of Noise-Evoked Blood Pressure by Means of Averaging Method: Relation between Blood Pressure Rise and PSL" (1991, Vol. 151(3), pp. 383-394)] described a study investigating the relationship between noise exposure and hypertension. The following data are representative of those reported in the article. 
 
-(Insert table 1 here)
+```{r}
+
+df <- data.frame(
+  x = c(60,63,65,70,70,70,80,90,80,80,85,89,90,90,90,90,94,100,100,100),
+  y = c(1,0,1,2,5,1,4,6,2,3,5,4,6,8,4,5,7,9,7,6))
+knitr::kable(df, "pipe", col.name=c("x" , "y"), align=c("c","c","c"))
+             
+```
+
 
 ### A. Draw a scatter diagram of y (blood pressure rise in millimeters of mercury) versus x (sound pressure level in decibels). Does a simple linear regression model seem reasonable in this situation?
 
-(Insert scatter diagram here)
+```{r}
+plot(Noise, BP, pch = 16, cex = 1.3, col = "blue", main = "BLOOD PRESSURE RISE PLOTTED AGAINST NOISE LEVELS", xlab = "NOISE LEVELS (db)", ylab = "BLOOD PRESSURE")
+
+```
+
 
 ### B. Fit the simple linear regression model using least squares. Find an estimate of σ2.
 
