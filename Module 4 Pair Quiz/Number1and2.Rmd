@@ -63,7 +63,7 @@ $$
 $$
 
 $$
-\sum_{i=1}^{20} {xy} = 7654
+\sum_{i=1}^{20} {x_iy_1} = 7654
 $$
 
 The form for the simple linear regression model would be:
@@ -114,19 +114,19 @@ $$
 To compute for the estimate of σ2, we would use this formula: 
 
 $$
-\sigma^2 = \frac{SSE}{n-2}
+\hat \sigma^2 = \frac{SSE}{n-2}
 $$
 
 However, to solve for SSE, we would use this formula:
 
 $$
-SSE = \sum_{i=1}^{20} {(y - \hat {y_1})^2} = 31.26648
+SSE = \sum_{i=1}^{20} {(y_i - \hat {y_{i1}})^2} = 31.26648
 $$
 
 We now substitute the values:
 
 $$
-\sigma^2 = \frac {31.26648}{18} = 1.737027 \approx 1.737
+\hat \sigma^2 = \frac {31.26648}{18} = 1.737027 \approx 1.737
 $$
 
 The  estimate of σ2 or estimated variance is **1.737** 
@@ -139,7 +139,7 @@ $$
 \hat {y} = -10.132 + 0.1743(85) = -10.132 + 14.8155 = 4.6835 
 $$
 
-The predicted mean rise in blood pressure level is **4.6835**
+The predicted mean rise in blood pressure level is **4.6835 mm Hg**
 
 ## Question 2
 
@@ -149,9 +149,100 @@ The predicted mean rise in blood pressure level is **4.6835**
 
 ### A. Fit a multiple linear regression model to these data.
 
-(insert scatter diagram here)
+For this question, we will use the following values:
+
+$$
+n=9
+$$
+
+$$
+\sum_{i=1}^{9} {x_{i1}} = 641, \sum_{i=1}^{9} {x_{i2}} = 487, \sum_{i=1}^{9} {y_i} = 1038
+$$
+
+$$
+\sum_{i=1}^{9} {x_{i1}^2} = 49527, \sum_{i=1}^{9} {x_{i2}^2} = 30087, \sum_{i=1}^{9} {y_i^2} = 152162
+$$
+
+$$
+\sum_{i=1}^{9} {x_{i1}x_{i2}} = 36603, \sum_{i=1}^{9} {x_{i1}y_i} = 70012, \sum_{i=1}^{9} {x_{i2}y_i} = 46661
+$$
+
+The form for the simple linear regression model would be:
+
+$$
+\hat {y} = \hat {\beta_0} + \hat {\beta_1}x_1 + \hat {\beta_2}x_2
+$$
+
+However, we don't know how the values of β0, β1 and β2. To compute for these values, we would use least squares normal Equations:
+
+$$
+n\hat {\beta_0} + \hat {\beta_1}\sum_{i=1}^{9} {x_{i1}} + \hat {\beta_2}\sum_{i=1}^{9} {x_{i2}} = \sum_{i=1}^{9} {y_i}
+$$
+
+$$
+\hat {\beta_0}\sum_{i=1}^{9} {x_{i1}}+\hat {\beta_1}\sum_{i=1}^{9} {x_{i1}^2}+ \hat {\beta_2}\sum_{i=1}^{9} {x_{i1}x_{i2}} = \sum_{i=1}^{9} {x_{i1}y_i}
+$$
+
+$$
+\hat {\beta_0}\sum_{i=1}^{9} {x_{i2}}+\hat {\beta_1}\sum_{i=1}^{9} {x_{i1}x_{i2}}+ \hat {\beta_2} \sum_{i=1}^{9} {x_{i2}^2} = \sum_{i=1}^{9} {x_{i2}y_i}
+$$
+
+We'll then substitute the previous values or variables whose values were already determined to these equations:
+
+$$
+9\hat {\beta_0} + 641\hat {\beta_1} + 487\hat {\beta_2} = 1038
+$$
+
+$$
+641\hat {\beta_0}+49527\hat {\beta_1}+ 36603\hat {\beta_2} = 70012
+$$
+
+$$
+487\hat {\beta_0}+36603\hat {\beta_1}+ 30087\hat {\beta_2}  = 46601
+$$
+
+Now notice that these equations all have similar unknown variables, yet different equations. These equations look very similar to linear equations, having 3 variables. Therefore in order to solve this problem, we would be using systems of linear equation to solve this problem, which would give us the values of the missing variables:
+
+$$
+\hat \beta_0 = 238.56 \approx 239
+$$
+$$
+\hat \beta_1 = 0.3339 \approx 0.334
+$$
+
+$$
+\hat \beta_2 = -2.7167 \approx -2.72
+$$
+
+**Let us now substitute these values to solve for or fit the multiple regression model, which would be:**
+
+$$
+\hat {y} = 239 + 0.334x_1 -2.72 x_2
+$$
 
 ### B. Estimate σ2.
+
+To compute for the estimate of σ2, we would use this formula: 
+
+$$
+\hat \sigma^2 = \frac{SSE}{n-p}
+$$
+
+the p variable represents the parameters. The number of parameters are 3 (Brightness, Contrast and Useful range), which would mean that p = 3
+
+However, to solve for SSE, we would use this formula:
+
+$$
+SSE = \sum_{i=1}^{20} {(y_i - \hat {y_{i1}})^2} = 7928.344 \approx 7928
+$$
+
+We now substitute the values:
+
+$$
+\hat \sigma^2 = \frac {7928}{9-3} = \frac {7928}{6} = 1321
+$$
+
+The  estimate of σ2 or estimated variance is **1321**
 ### C. Compute the standard errors of the regression coefficients.
 ### D. Predict the useful range when brightness = 80 and contrast = 75.
 
@@ -170,7 +261,6 @@ Let us then Substitute the given values:
 $$
 \hat{y} = 239 + 0.334(x_1)-2.72(x_2)= 239 + 0.334(80)-2.72(75) = 239 + 26.72 -204 = 61.72
 $$
-
 
 The predicted useful range is **61.72**
 
