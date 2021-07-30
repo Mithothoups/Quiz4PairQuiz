@@ -1,6 +1,6 @@
 ---
 title: "Number1and2"
-author: "Joey Castillo"
+author: "Joey Castillo and Justine Sison"
 date: "7/28/2021"
 output: html_document
 library: (help = 'datasets')
@@ -9,14 +9,22 @@ library: (help = 'datasets')
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+Noise <- c(60, 63, 65, 70, 70, 70, 80, 90, 80, 80, 85, 89, 90, 90, 90, 90, 94, 100, 100, 100)
+BP <- c(1, 0, 1, 2, 5, 1, 4, 6, 2, 3, 5, 4, 6, 8, 4, 5, 7, 9, 7, 6)
+
+
 ```
 
 
-plot(BP,Noise, main= 'Regression for BP and Noise'
-xlab = 'BP', ylab = 'Noise)
 
-)
 
+
+
+
+```{r}
+plot(Noise, BP, pch = 16, cex = 1.3, col = "blue", main = "BLOOD PRESSURE RISE PLOTTED AGAINST NOISE LEVELS", xlab = "NOISE LEVELS (db)", ylab = "BLOOD PRESSURE")
+```
 
 
 
