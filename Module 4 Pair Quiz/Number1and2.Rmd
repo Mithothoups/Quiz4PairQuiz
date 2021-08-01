@@ -39,7 +39,11 @@ knitr::kable(df, "pipe", col.name=c("Noise Levels (db)" , "Blood Pressure (mm Hg
 ```{r}
 plot(Noise, BP, pch = 16, cex = 1.3, col = "blue", main = "BLOOD PRESSURE RISE PLOTTED AGAINST NOISE LEVELS", xlab = "NOISE LEVELS (db)", ylab = "BLOOD PRESSURE")
 
+
+abline(lm(BP~Noise), col = "red")
 ```
+
+A simple linear regression model is appropriate for this situation, as the observed data is steadily increasing without too many outliers.
 
 
 ### B. Fit the simple linear regression model using least squares. Find an estimate of σ2.
@@ -251,6 +255,7 @@ $$
 $$
 
 The  estimate of σ2 or estimated variance is **1321**
+
 ### C. Compute the standard errors of the regression coefficients.
 
 Computing for the standard errors of the regression coefficients requires a lot of Math that are very complicated if solved manually. However, using an external application, we managed to solve the standard errors of each regression coefficients:
@@ -300,12 +305,65 @@ The P-value is **0.051**
 ### F. Construct a t-test on each regression coefficient. What conclusions can you draw about the variables in this model? Use α=0.05.
 
 
+Declaring our hypotheses for the Brightness and Contrast coefficient tests respectively, 
+
+Brightness 
+$$H_0: \beta_1 = 0 \\
+H_1: \beta_1 \ne 0
+$$  
+
+Contrast
+$$
+H_0:\beta_2 = 0        \\
+H_1:\beta_2 \ne 0
+$$
 
 
 
-plot(BP,Noise, main= 'Regression for BP and Noise'
-xlab = 'BP', ylab = 'Noise)
+We will be using the formula for test statistic on both hypotheses:
 
-)
+
+$$ 
+t_0 = \frac{\hat\beta}{se(\hat\beta)}
+$$
+
+
+
+Inserting the values, we get:
+
+$\beta_1$:
+
+$$
+t_1 = \frac{\hat\beta_1}{se(\hat\beta_1)} \\
+t_1= \frac{0.3339}{0.6763}\\
+t_1=0.4937
+$$
+
+$\beta_2$:
+
+$$
+t_2 = \frac{\hat\beta_2}{se(\hat\beta_2)} \\
+t_2 = \frac{-2.7167}{0.6887} \\
+t_2 = -3.9447 \\
+$$
+
+Now that we have the respective t-scores for $\beta_1$ and $\beta_2$, we must compare them to the critical value of $t_\frac{\alpha}{2},n-p = 2.4469$. If |$t_1$ or $t_2$|>$t_\frac{\alpha}{2},n-p = 2.4469$, then their respective null hypotheses will be rejected. 
+
+Comparing the Values:
+
+$$|t_1| = 0.4937<2.4469 = t_\frac{\alpha}{2},n-p
+$$
+With $\beta_1$'s t-score being lesser than the critical value, it is safe to fail to reject the null hypothesis in this case. This means that Brightness does not have a significant effect on the model.
+
+
+
+
+$$|t_2| = 3.9447 > 2.4469 = t_\frac{\alpha}{2},n-p
+$$
+
+With $\beta_2$'s t-score being greater than the critical value, it is safe to reject the null hypothesis and accept that Contrast has a significant effect on the model.
+
+
+
 
 
