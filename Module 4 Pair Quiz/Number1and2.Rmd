@@ -252,6 +252,21 @@ $$
 
 The  estimate of σ2 or estimated variance is **1321**
 ### C. Compute the standard errors of the regression coefficients.
+
+Computing for the standard errors of the regression coefficients requires a lot of Math that are very complicated if solved manually. However, using an external application, we managed to solve the standard errors of each regression coefficients:
+
+$$
+se(\hat \beta_0) = 45.23
+$$
+
+$$
+se(\hat \beta_1) = 0.6763
+$$
+
+$$
+se(\hat \beta_2) = 0.6887
+$$
+
 ### D. Predict the useful range when brightness = 80 and contrast = 75.
 
 To compute for the useful range, we just have to substitute the values from the linear regression model. We would then use these values:
@@ -274,21 +289,13 @@ The predicted useful range is **61.72**
 
 ### E. Test for significance of regression using α=0.05. What is the P-value for this test?
 
-For the significance of regression testing, we would use the following hypothesis:
+The Z-score for a 0.05 significance level is 1.645. To solve for its p-value, we would use the formula for a right-tailed test and substitute the values:
 
 $$
-H_0: \beta_j = 0
+P = [1- \Phi(Z_{0.05})] = 1 - 0.9495 = 0.0505 \approx 0.051
 $$
 
-$$
-H_1: \beta_j \neq 0
-$$
-
-We would then use the formula to find our test value:
-
-$$
-T_0 = \frac {\hat \beta_j}{se(\hat \beta_j)}
-$$
+The P-value is **0.051**
 
 ### F. Construct a t-test on each regression coefficient. What conclusions can you draw about the variables in this model? Use α=0.05.
 
