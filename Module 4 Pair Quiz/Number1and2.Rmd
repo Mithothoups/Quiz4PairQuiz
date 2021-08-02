@@ -258,7 +258,11 @@ The  estimate of σ2 or estimated variance is **1321**
 
 ### C. Compute the standard errors of the regression coefficients.
 
-Computing for the standard errors of the regression coefficients requires a lot of Math that are very complicated if solved manually. However, using an external application, we managed to solve the standard errors of each regression coefficients:
+Computing for the standard errors of the regression coefficients requires a lot of Math that are very complicated if solved manually. However, using an external application (MS Excel), we managed to solve the standard errors of each regression coefficients:
+
+![Excel regression line results](https://i.imgur.com/YJzJP64.png) 
+
+From this table, we can get the standard errors of each regression coefficients, which are:
 
 $$
 se(\hat \beta_0) = 45.23
